@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charge | Customers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">⚡ EV Charge</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="customers.html">Customers</a>
+        <a href="stations.html">Stations</a>
+        <a href="booking.html">Booking</a>
+        <a href="payment.html">Payment</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="page-header">
+        <div>
+            <p class="small-title">CUSTOMER MANAGEMENT</p>
+            <h1>Customers</h1>
+            <p>Manage EV customers registered in the system.</p>
+        </div>
+    </section>
+
+    <section class="form-card">
+        <div class="section-title left">
+            <p class="small-title">NEW CUSTOMER</p>
+            <h2>Add New Customer</h2>
+            <p>Enter the customer details below to register a customer.</p>
+        </div>
+
+        <form id="customerForm" novalidate>
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="customerName">Customer Name</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="e.g. Vaishnavi Sonawane"
+                        minlength="2"
+                        maxlength="50"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Phone</label>
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="Enter 10-digit mobile number"
+                        inputmode="numeric"
+                        autocomplete="tel"
+                        maxlength="10"
+                        pattern="[0-9]{10}"
+                        title="Enter exactly 10 digits"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="customerEmail">Email</label>
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        placeholder="e.g. name@example.com"
+                        maxlength="100"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="customerCity">City</label>
+                    <input
+                        type="text"
+                        id="customerCity"
+                        placeholder="e.g. Pune"
+                        minlength="2"
+                        maxlength="50"
+                        autocomplete="address-level2"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="customer-form-actions">
+                <button type="submit" class="btn">
+                    + Add Customer
+                </button>
+                <button type="reset" class="btn btn-secondary">
+                    Clear Form
+                </button>
+            </div>
+
+            <p id="customerMessage" class="message" role="status"
+               aria-live="polite"></p>
+        </form>
+    </section>
+
+    <section class="table-section">
+        <div class="section-title left">
+            <p class="small-title">CUSTOMER DIRECTORY</p>
+            <h2>Registered Customers</h2>
+            <p>View customers saved in your database.</p>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody id="customerTable">
+                    <tr>
+                        <td colspan="5" class="loading">
+                            Loading customers...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 EV Charging Station Management System
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

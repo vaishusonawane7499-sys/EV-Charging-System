@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charge - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">⚡ EV Charge</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="customers.html">Customers</a>
+        <a href="stations.html">Stations</a>
+        <a href="booking.html">Booking</a>
+        <a href="payment.html">Payment</a>
+    </nav>
+</header>
+
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <p class="small-title">OVERVIEW</p>
+            <h1>Dashboard</h1>
+            <p>EV Charging Station Management System</p>
+        </div>
+    </div>
+
+
+    <div class="dashboard-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div>
+                <h3>Customers</h3>
+                <strong id="customerCount">0</strong>
+                <p>Total Customers</p>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">🚗</div>
+            <div>
+                <h3>Vehicles</h3>
+                <strong id="vehicleCount">0</strong>
+                <p>Registered Vehicles</p>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">📍</div>
+            <div>
+                <h3>Stations</h3>
+                <strong id="stationCount">0</strong>
+                <p>Charging Stations</p>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">🔌</div>
+            <div>
+                <h3>Charging Points</h3>
+                <strong id="pointCount">0</strong>
+                <p>Available Points</p>
+            </div>
+        </div>
+
+
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div>
+                <h3>Bookings</h3>
+                <strong id="bookingCount">0</strong>
+                <p>Total Bookings</p>
+            </div>
+        </div>
+
+
+        <div class="stat-card revenue">
+            <div class="stat-icon">💰</div>
+            <div>
+                <h3>Revenue</h3>
+                <strong id="revenue">₹0.00</strong>
+                <p>Total Revenue</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <section class="quick-section">
+
+        <div class="section-title left">
+            <p class="small-title">SHORTCUTS</p>
+            <h2>Quick Actions</h2>
+        </div>
+
+        <div class="quick-actions">
+
+            <a href="customers.html" class="quick-card">
+                <span>👤</span>
+                <div>
+                    <h3>Add Customer</h3>
+                    <p>Register a new EV customer.</p>
+                </div>
+            </a>
+
+            <a href="stations.html" class="quick-card">
+                <span>📍</span>
+                <div>
+                    <h3>Find Station</h3>
+                    <p>View charging stations.</p>
+                </div>
+            </a>
+
+            <a href="booking.html" class="quick-card">
+                <span>🔌</span>
+                <div>
+                    <h3>Make Booking</h3>
+                    <p>Reserve a charging point.</p>
+                </div>
+            </a>
+
+            <a href="payment.html" class="quick-card">
+                <span>💳</span>
+                <div>
+                    <h3>Payment</h3>
+                    <p>View payment information.</p>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="table-section">
+
+        <div class="section-title left">
+            <p class="small-title">BOOKINGS</p>
+            <h2>Recent Bookings</h2>
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Customer</th>
+                        <th>Vehicle</th>
+                        <th>Station</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="recentBookings">
+                    <tr>
+                        <td colspan="6" class="loading">
+                            Loading bookings...
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 EV Charging Station Management System
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

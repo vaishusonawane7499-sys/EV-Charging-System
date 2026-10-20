@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charge - Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">⚡ EV Charge</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="customers.html">Customers</a>
+        <a href="stations.html">Stations</a>
+        <a class="active" href="booking.html">Booking</a>
+        <a href="payment.html">Payment</a>
+    </nav>
+</header>
+
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <p class="small-title">RESERVATION</p>
+            <h1>Make a Booking</h1>
+            <p>Reserve a charging point for your electric vehicle.</p>
+        </div>
+    </div>
+
+
+    <section class="form-card">
+
+        <div class="section-title left">
+            <p class="small-title">BOOKING FORM</p>
+            <h2>Charging Reservation</h2>
+        </div>
+
+
+        <form id="bookingForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Customer</label>
+
+                    <select id="bookingCustomer" required>
+                        <option value="">Select Customer</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Vehicle</label>
+
+                    <select id="bookingVehicle" required>
+                        <option value="">Select Vehicle</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Charging Point</label>
+
+                    <select id="bookingPoint" required>
+                        <option value="">Select Charging Point</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Booking Date</label>
+
+                    <input
+                        type="date"
+                        id="bookingDate"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Start Time</label>
+
+                    <input
+                        type="time"
+                        id="startTime"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>End Time</label>
+
+                    <input
+                        type="time"
+                        id="endTime"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn">
+                Confirm Booking
+            </button>
+
+            <p id="bookingMessage" class="message"></p>
+
+        </form>
+
+    </section>
+
+
+    <section class="table-section">
+
+        <div class="section-title left">
+            <p class="small-title">BOOKING HISTORY</p>
+            <h2>Recent Bookings</h2>
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer</th>
+                        <th>Vehicle</th>
+                        <th>Point</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="bookingTable">
+
+                    <tr>
+                        <td colspan="6" class="loading">
+                            Loading bookings...
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 EV Charging Station Management System
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

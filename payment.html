@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EV Charge - Payment</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .payment-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .payment-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 35px;
+        }
+
+        .payment-box h1 {
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .pay-button {
+            width: 100%;
+            padding: 14px;
+            background: #009879;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pay-button:hover {
+            background: #007f65;
+        }
+
+        .success {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e5f7ef;
+            color: #087443;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .transaction-table th,
+        .transaction-table td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .transaction-table th {
+            background: #f4f7f6;
+        }
+
+        .paid {
+            background: #dff6eb;
+            color: #087443;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+
+        <div class="logo">
+            ⚡ <span>EV Charge</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html">Customers</a>
+            <a href="stations.html">Stations</a>
+            <a href="booking.html">Booking</a>
+            <a href="payment.html" class="active">Payment</a>
+        </div>
+
+    </nav>
+</header>
+
+
+<main class="payment-container">
+
+    <!-- SIMPLE PAYMENT FORM -->
+
+    <div class="payment-box">
+
+        <h1>Make Payment</h1>
+
+        <div class="form-group">
+
+            <label>Session ID</label>
+
+            <input
+                type="number"
+                id="sessionId"
+                placeholder="Enter Session ID"
+                value="5"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Amount (₹)</label>
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Enter amount"
+                value="420"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Payment Method</label>
+
+            <select id="paymentMethod">
+
+                <option value="UPI">UPI</option>
+
+                <option value="Card">Card</option>
+
+                <option value="Cash">Cash</option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="pay-button"
+            id="payButton"
+        >
+            Pay Now
+        </button>
+
+
+        <div
+            class="success"
+            id="successMessage"
+        ></div>
+
+    </div>
+
+
+    <!-- PAYMENT HISTORY -->
+
+    <div class="payment-box">
+
+        <h1>Payment Information</h1>
+
+        <table class="transaction-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Payment ID</th>
+
+                    <th>Session ID</th>
+
+                    <th>Date</th>
+
+                    <th>Amount</th>
+
+                    <th>Method</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="paymentTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+
+<footer>
+    © 2026 EV Charging Station Management System
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
